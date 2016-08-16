@@ -111,8 +111,9 @@ def is_day_valid(month, day, year)
   }
 
   if month == 2 && year % 4 == 0 && !year % 100 == 0 || year % 400 == 0
-    day < 29
-  
-  elsif day < month_to_number_of_days[:month]
+
+    day <= 29
+
+  elsif day <= month_to_number_of_days[:month]
 
 end
