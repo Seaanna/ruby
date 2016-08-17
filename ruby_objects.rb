@@ -82,9 +82,9 @@ class Tesla < Car
     end
   end
   #returns the speed
-  def speed?
-    @speed
-  end
+  # def speed?
+  #   @speed
+  # end
 end
 
 class Tata < Car
@@ -101,9 +101,9 @@ class Tata < Car
     end
   end
   # returns the speed
-  def speed?
-    @speed
-  end
+#   def speed?
+#     @speed
+#   end
 end
 
 class Toyota < Car
@@ -120,13 +120,28 @@ class Toyota < Car
     end
   end
   # returns the speed
-  def speed?
-    @speed
-  end
+  # def speed?
+  #   @speed
+  # end
 end
+#create an empty array for the my cars array
+# need to initialize in car
 
+#Purpose: create a method to add new cars into an array
+#Signature: nothing --> [car1, car2, car3...]
+#Example: create_cars --> [car1, car2, car3...]
+def create_cars
+  my_cars = []
+  #create 6 cars and shovel/push 6 cars into the my_cars array
+  my_cars<<my_tesla=Tesla.new(2016)
+  my_cars<<my_tata=Tata.new(2012)
+  my_cars<<my_toyota=Toyota.new(1994)
+  my_cars<<my_tesla=Tesla.new(2015)
+  my_cars<<my_tata=Tata.new(2013)
+  my_cars<<my_toyota=Toyota.new(1999)
+end
 my_cars = []
-
+#create 6 cars and shovel/push 6 cars into the my_cars array
 my_cars<<my_tesla=Tesla.new(2016)
 my_cars<<my_tata=Tata.new(2012)
 my_cars<<my_toyota=Toyota.new(1994)
@@ -135,3 +150,9 @@ my_cars<<my_tata=Tata.new(2013)
 my_cars<<my_toyota=Toyota.new(1999)
 
 my_cars.sort
+#sort my_cars by year
+my_cars.sort{ |x,y| x.year <=> y.year }
+#sort my_cars by name
+my_cars.sort{ |x,y| x.class.to_s <=> y.class.to_s }
+#sort my_cars by name and year
+my_cars.sort{ |x,y| [x.class.to_s, x.year] <=> [y.class.to_s,  y.year] }
